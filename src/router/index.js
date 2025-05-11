@@ -69,7 +69,11 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHistory(
+        import.meta.env.NODE_ENV === 'production'
+            ? '/vue-school-travel-app/'
+            : '/'
+    ),
     routes,
     linkActiveClass: 'vue-school-active-link',
     scrollBehavior (to,from,savedPosition) {
