@@ -10,6 +10,6 @@ export default defineConfig({
     },
   },
   plugins: [vue()],
-  base: 'vue-school-travel-app'
+  base: '/vue-school-travel-app/',
 })
 
