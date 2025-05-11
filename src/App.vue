@@ -12,8 +12,14 @@ export default defineComponent({
   <TheNavigation />
 
   <div class="container">
+<!--  slide-->
+    <router-view class="view left-sidebar" name="LeftSidebar" v-slot="{Component}">
+      <transition name="slide" mode="out-in">
+        <component :is="Component" :key="$route.path"></component>
+      </transition>
+    </router-view>
 <!--    <router-view :key="$route.path"></router-view>-->
-    <router-view v-slot="{Component} ">
+    <router-view v-slot="{Component}" class="main-view">
       <transition name="slide" mode="out-in">
         <component :is="Component" :key="$route.path"></component>
       </transition>
@@ -29,6 +35,18 @@ export default defineComponent({
 .slide-enter-from, .slide-leave-to{
   opacity: 0;
   transform: translateX(-100%);
+}
+
+.container {
+  display: flex;
+}
+
+.left-sidebar {
+  width: 20%;
+}
+
+.main-view {
+  width: 100%;
 }
 
 </style>
