@@ -10,7 +10,7 @@
           :to="{name: 'destination.show', params: {id: destination.id, slug: destination.slug}}"
       >
         <h2>{{destination.name}}</h2>
-        <img :src="`/images/${destination.image}`" :alt="destination.name" />
+        <img :src="`${baseUrl}images/${destination.image}`" :alt="destination.name" />
       </router-link>
     </div>
   </div>
@@ -25,6 +25,7 @@ export default {
     data(){
       return {
         destinations: sourceData.destinations,
+        baseUrl: import.meta.env.BASE_URL,
       }
     },
     methods: {

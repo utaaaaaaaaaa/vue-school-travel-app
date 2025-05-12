@@ -15,6 +15,11 @@ export default {
   //     this.destination = await response.json()
   //   }
   // },
+  data(){
+    return {
+      baseUrl: import.meta.env.BASE_URL,
+    }
+  },
   components: {ExperienceCard, GoBack},
   computed: {
     // destinationId(){
@@ -47,7 +52,7 @@ export default {
       <h1>{{destination.name}}</h1>
       <GoBack/>
       <div class="destination-details">
-        <img :src="`/images/${destination.image}`" :alt="destination.name">
+        <img :src="`${baseUrl}images/${destination.image}`" :alt="destination.name">
         <p>{{destination.description}}</p>
       </div>
     </section>

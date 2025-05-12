@@ -5,9 +5,14 @@ import { fileURLToPath, URL} from "node:url"
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
 
+  // 动态基础路径配置
+  const base = mode === 'production'
+      ? '/vue-school-travel-app/'
+      : '/'
+
   return {
     // 使用环境变量
-    base: mode === 'production' ? '/vue-school-travel-app/' : '/',
+    base: base,
     publicDir: 'public',
     resolve: {
       alias: {
