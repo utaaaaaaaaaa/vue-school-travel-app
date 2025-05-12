@@ -70,9 +70,7 @@ const routes = [
 
 const router = createRouter({
     history: createWebHistory(
-        import.meta.env.NODE_ENV === 'production'
-            ? '/vue-school-travel-app/'
-            : '/'
+        '/vue-school-travel-app/' // 使用Vite配置的基础路径
     ),
     routes,
     linkActiveClass: 'vue-school-active-link',

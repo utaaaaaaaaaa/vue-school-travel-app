@@ -5,12 +5,12 @@ import { fileURLToPath, URL} from "node:url"
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
   // 加载环境变量
-  const env = loadEnv(mode, process.cwd())
+  const env = loadEnv(mode, import.meta.cwd())
 
   return {
     // 使用环境变量
     base: mode === 'production' ? '/vue-school-travel-app/' : '/',
-
+    publicDir: 'public',
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
