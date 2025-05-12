@@ -1,0 +1,1 @@
+import{e as r,c as n,a as s,o as a}from"./index-BVl0M8eQ.js";const l={__name:"Invoices",setup(t){return r((o,e)=>{if(!window.confirm("Are you sure you want to leave? Invoices are super awesome!"))return!1}),(o,e)=>(a(),n("div",null,e[0]||(e[0]=[s("h1",null,"Invoices",-1)])))}};export{l as default};
