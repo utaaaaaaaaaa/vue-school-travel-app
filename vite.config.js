@@ -4,8 +4,6 @@ import { fileURLToPath, URL} from "node:url"
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
-  // 加载环境变量
-  const env = loadEnv(mode, import.meta.cwd())
 
   return {
     // 使用环境变量
